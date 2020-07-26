@@ -24,11 +24,11 @@ public class UpdatePetNameStatusEndpoint extends BaseEndpoint<UpdatePetNameStatu
     @Step("Update Pet name and status")
     @Override
     public UpdatePetNameStatusEndpoint sendRequest() {
-        response = given().spec(RequestConfigurationBuilder.getDefaultRequestSpecification())
+        response = given().spec(RequestConfigurationBuilder.getDefaultRequestSpecification().contentType("application/x-www-form-urlencoded"))
                 .when()
                 .formParam("name", name)
                 .formParam("status", status)
-                .delete("pet/{petId}", petId);
+                .post("pet/{petId}", petId);
         return this;
     }
 
