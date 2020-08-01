@@ -23,6 +23,7 @@ public class UpdatePetTests extends PetTestBase {
         Pet pet = new PetTestDataGenerator().generatePet();
 
         petBeforeUpdate = new CreatePetEndpoint().setPet(pet).sendRequest().assertRequestSuccess().getResponseModel();
+        petIdToDelete = petBeforeUpdate.getId();
     }
 
     @TmsLink("ID-5")
