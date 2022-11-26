@@ -24,5 +24,4 @@ public class CreatePetTests extends PetTestBase {
         Assertions.assertThat(actualPet).describedAs("Send Pet was different than received by API").usingRecursiveComparison().isEqualTo(pet);
     }
 
-
 }
